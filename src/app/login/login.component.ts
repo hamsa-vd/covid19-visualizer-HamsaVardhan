@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 	constructor(private fb: FormBuilder, private serve: ChildService, private route: Router) {}
 
 	ngOnInit(): void {
+		alert('email: kid@cat' + '\n' + 'password : kidcat');
 		this.Register = this.fb.group({
 			firstName: [ '', Validators.required ],
 			lastName: [ '', [ Validators.required ] ],
