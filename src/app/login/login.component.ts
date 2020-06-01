@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
 	loginsubmit() {
 		if (this.Login.valid)
 			this.serve.logindata(this.Login.value).subscribe((v) => {
+				localStorage.setItem('token', v['token']);
 				this.route.navigate([ '/main' ]);
 			});
 		else {

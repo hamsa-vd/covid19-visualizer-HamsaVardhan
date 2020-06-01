@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-main',
@@ -13,7 +14,11 @@ export class MainComponent implements OnInit {
 	confirmed;
 	recovered;
 	deaths;
-	constructor(private serve: MainService) {}
+	deletetoken() {
+		localStorage.removeItem('token');
+		this.route.navigate([ '' ]);
+	}
+	constructor(private serve: MainService, private route: Router) {}
 	link = '/home';
 	ngOnInit(): void {
 		this.serve.statesinfo().subscribe((v) => {

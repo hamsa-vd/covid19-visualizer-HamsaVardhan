@@ -4,13 +4,14 @@ import { MainService } from '../main.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import * as Chart from 'chart.js';
+import { Router } from '@angular/router';
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
 	styleUrls: [ './home.component.scss' ]
 })
 export class HomeComponent implements OnInit {
-	constructor(private toast: ToastrService, private getter: MainService) {}
+	constructor(private toast: ToastrService, private getter: MainService, private route: Router) {}
 	loginpage = '';
 	indiadata;
 	total;
@@ -20,6 +21,10 @@ export class HomeComponent implements OnInit {
 	recovered = [];
 	chart1 = [];
 	chart2 = [];
+	deletetoken() {
+		localStorage.removeItem('token');
+		this.route.navigate([ '' ]);
+	}
 	@ViewChild(MatPaginator, { static: true })
 	paginator: MatPaginator;
 	displayedColumns = [ 'state', 'confirmed', 'active', 'deaths', 'recovered' ];

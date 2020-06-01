@@ -1,5 +1,5 @@
 <div class='mainparent'>
-    <button [routerLink] = 'loginpage' class='logout'>logout</button>
+    <button (click)='deletetoken()' class='logout'>logout</button>
         <div class='mainchild'>
             <p class="_active"><span>active</span>{{active}}</p>
             <p class='confirmed'><span>confirmed</span>{{confirmed}}</p>

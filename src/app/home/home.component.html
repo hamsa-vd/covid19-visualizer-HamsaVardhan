@@ -1,4 +1,4 @@
-<button [routerLink] = 'loginpage' class='logout'>logout</button>
+<button (click) = 'deletetoken()' class='logout'>logout</button>
 <div class="homeparent">
     <div class="table">
         <table mat-table [dataSource] = 'indiadata' class='mat-elevation-z8'>
