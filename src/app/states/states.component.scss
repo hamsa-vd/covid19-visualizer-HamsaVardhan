@@ -1,0 +1,62 @@
+.statesparent {
+	display: grid;
+	max-width: 100vw;
+	min-height: 100vh;
+	margin-top: 2vh;
+	grid-template-columns: 1fr 1fr;
+	background-color: #485461;
+	background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+	grid-template-rows: repeat(autofit, 1fr);
+	justify-content: space-around;
+	overflow: scroll;
+	align-items: center;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	.statestable {
+		grid-column: 1/2;
+		grid-row: 1/2;
+		display: flex;
+		flex-direction: column;
+		flex-basis: auto;
+		padding: 1rem;
+		table,
+		mat-paginator {
+			width: 100%;
+			color: blue;
+		}
+		mat-paginator {
+			display: flex;
+			justify-content: space-around;
+			overflow: hidden;
+		}
+		table {
+			tr {
+				th,
+				td {
+					padding: 0.5rem;
+				}
+			}
+			tr:not(.head):hover {
+				cursor: pointer;
+				transform: scale(1.02);
+				background-color: black;
+				background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+				border-radius: 1rem;
+				td {
+					color: white;
+				}
+			}
+		}
+	}
+	.statescharts {
+		grid-column: 2/3;
+		grid-row: 1/2;
+		display: flex;
+		flex-direction: column;
+		margin: 1rem;
+		margin-top: 0rem;
+		justify-content: space-around;
+	}
+}

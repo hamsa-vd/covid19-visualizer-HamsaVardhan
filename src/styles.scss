@@ -3,5 +3,27 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	background-color: #485461;
+	background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+	width: 100vw;
+	background-size: 800%;
+	background-repeat: no-repeat;
+	background-position: center;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	// background: url('https://spotlight.it-notes.ru/wp-content/uploads/2017/08/d6516dc1fcb0e29fe1e76e4e0d35f6b3-1024x576.jpg');
+	// // background-size: cover;
+	// background-repeat: no-repeat;
+	// background-size: cover;
+	// backdrop-filter: brightness(50%);
+	// color: white;
+}

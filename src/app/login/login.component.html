@@ -1,0 +1,32 @@
+<div class="loginparent">
+        <form action="" [formGroup]='Login' (ngSubmit)='loginsubmit()' class='login'>
+            <label for="username">
+                <p>e-mail</p>
+                <input type="text" name='username' id="username" formControlName='email'>
+            </label>
+            <label for="loginpassword">
+                <p>password</p>
+                <input type="password" name='loginpassword' id='loginpassword' formControlName='password'>
+            </label>
+            <button type="submit">login</button>
+        </form>
+        <form action="" [formGroup] = 'Register' (ngSubmit)='registersubmit()' [class.signup]='check'>
+            <label for="firstname">
+                   <p>First Name</p>
+                   <input type="text" name="firstname" id='firstname' formControlName='firstName' autofocus>
+            </label>
+            <label for="lastname">
+                   <p>Last Name</p>
+                   <input type="text" name="lastname" id='lastname' formControlName='lastName'>
+            </label>
+            <label for="email">
+                   <p>e-mail</p>
+                   <input type="text" name="email" id='email' formControlName='email'>
+            </label>
+            <label for="password">
+                   <p>password</p>
+                   <input type="password" name="password" id='password' formControlName='password'>
+            </label>
+            <button type='submit'>Register</button>
+        </form>
+</div>
