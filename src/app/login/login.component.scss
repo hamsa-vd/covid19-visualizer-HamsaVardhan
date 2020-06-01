@@ -57,3 +57,14 @@
 .signup {
 	display: none;
 }
+.login {
+	display: none;
+	transform: translateX(30%);
+	opacity: 0;
+	transition: all 2s ease-in;
+}
+.changed {
+	display: block;
+	transform: translateX(0%);
+	opacity: 1;
+}

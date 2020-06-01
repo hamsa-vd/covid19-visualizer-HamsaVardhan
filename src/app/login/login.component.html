@@ -1,5 +1,5 @@
 <div class="loginparent">
-        <form action="" [formGroup]='Login' (ngSubmit)='loginsubmit()' class='login'>
+        <form action="" [formGroup]='Login' (ngSubmit)='loginsubmit()' class='login' [class.changed]= 'check'>
             <label for="username">
                 <p>e-mail</p>
                 <input type="text" name='username' id="username" formControlName='email'>
@@ -10,7 +10,7 @@
             </label>
             <button type="submit">login</button>
         </form>
-        <form action="" [formGroup] = 'Register' (ngSubmit)='registersubmit()' class='signup'>
+        <form action="" [formGroup] = 'Register' (ngSubmit)='registersubmit()' [class.signup]= 'check'>
             <label for="firstname">
                    <p>First Name</p>
                    <input type="text" name="firstname" id='firstname' formControlName='firstName' autofocus>
@@ -28,5 +28,6 @@
                    <input type="password" name="password" id='password' formControlName='password'>
             </label>
             <button type='submit'>Register</button>
+            <button style='margin-left:0.5rem' (click)='check=true'> goto login</button>
         </form>
 </div>

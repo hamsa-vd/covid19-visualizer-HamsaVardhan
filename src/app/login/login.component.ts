@@ -14,11 +14,10 @@ export class LoginComponent implements OnInit {
 	constructor(private fb: FormBuilder, private serve: ChildService, private route: Router) {}
 
 	ngOnInit(): void {
-		alert('email: kid@cat' + '\n' + 'password : kidcat');
 		this.Register = this.fb.group({
 			firstName: [ '', Validators.required ],
 			lastName: [ '', [ Validators.required ] ],
-			email: [ '', Validators.required, Validators.email ],
+			email: [ '', [ Validators.required, Validators.email ] ],
 			password: [ '', [ Validators.required ] ]
 		});
 		this.Login = this.fb.group({
@@ -35,6 +34,7 @@ export class LoginComponent implements OnInit {
 		}
 	}
 	registersubmit() {
+		console.log(this.Register);
 		if (this.Register.valid) {
 			this.check = true;
 			this.serve.registerdata(this.Register.value).subscribe((v) => {
