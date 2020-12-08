@@ -1,14 +1,14 @@
 <div class='mainparent'>
-    <button (click)='deletetoken()' class='logout'>logout</button>
-        <div class='mainchild'>
-            <p class="_active"><span>active</span>{{active}}</p>
-            <p class='confirmed'><span>confirmed</span>{{confirmed}}</p>
-        </div>
-        <div class='mainchild'>
-            <p class='deaths'><span>deceased</span>{{deaths}}</p>
-            <p class='recovered'><span>recoverd</span>{{recovered}}</p>
-        </div>
-<p class='traverse' [routerLink] = 'link'>
-state details
-</p>
-</div>  
+    <!-- <button (click)='deletetoken()' class='logout'>logout</button> -->
+    <div class='mainchild'>
+        <p class="_active"><span>active</span>{{active}}</p>
+        <p class='confirmed'><span>confirmed</span>{{confirmed}}</p>
+    </div>
+    <div class='mainchild'>
+        <p class='deaths'><span>deceased</span>{{deaths}}</p>
+        <p class='recovered'><span>recoverd</span>{{recovered}}</p>
+    </div>
+    <p class='traverse' [routerLink]='link'>
+        state details
+    </p>
+</div>

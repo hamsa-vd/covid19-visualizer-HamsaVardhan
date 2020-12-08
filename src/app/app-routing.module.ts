@@ -7,19 +7,19 @@ import { MainComponent } from './main/main.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
+	// {
+	// 	path: '',
+	// 	component: LoginComponent
+	// },
 	{
 		path: '',
-		component: LoginComponent
-	},
-	{
-		path: 'main',
 		component: MainComponent,
-		canActivate: [ AuthGuard ]
+		// canActivate: [ AuthGuard ] 
 	},
 	{
 		path: 'home',
 		component: HomeComponent,
-		canActivate: [ AuthGuard ],
+		// canActivate: [ AuthGuard ],
 		children: [
 			{
 				path: ':code',
@@ -30,7 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [ RouterModule.forRoot(routes) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

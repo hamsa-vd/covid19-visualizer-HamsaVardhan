@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
-	styleUrls: [ './home.component.scss' ]
+	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-	constructor(private toast: ToastrService, private getter: MainService, private route: Router) {}
+	constructor(private toast: ToastrService, private getter: MainService, private route: Router) { }
 	loginpage = '';
 	indiadata;
 	total;
@@ -23,11 +23,16 @@ export class HomeComponent implements OnInit {
 	chart2 = [];
 	deletetoken() {
 		localStorage.removeItem('token');
-		this.route.navigate([ '' ]);
+		this.route.navigate(['']);
+	}
+	moveTo(el: HTMLElement) {
+		el.scrollIntoView({
+			behavior: "smooth"
+		})
 	}
 	@ViewChild(MatPaginator, { static: true })
 	paginator: MatPaginator;
-	displayedColumns = [ 'state', 'confirmed', 'active', 'deaths', 'recovered' ];
+	displayedColumns = ['state', 'confirmed', 'active', 'deaths', 'recovered'];
 	ngOnInit(): void {
 		this.getter.statesinfo().subscribe((v) => {
 			this.indiadata = new MatTableDataSource(v['statewise'].slice(1));
